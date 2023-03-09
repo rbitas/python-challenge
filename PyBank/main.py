@@ -1,24 +1,24 @@
-import csv
 import os 
+import csv
 
-budget_path = os.path.join("...","Resources","budget_data.csv")
+budget_path = os.path.join("/Users/rinabitas/Documents/python-challenge/PyBank/Resources/budget_data.csv")
 
 totalmonths = 0
-totalamount = 0
-amount = []
-previous_amount = 0
+total_amount_loss = 0
+previous_amount_loss = 0
 profitchanges = 0 
-monthchanges=[]
-averageamount = 0
-amountlist =[]
+profitchanges =[]
 greatest_increase = ["", 0]
 greatest_decrease = ["", 9999999]
 
 with open(budget_path) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
-    csv_header = next(csvfile)
+    csvheader = next(csvreader)
 
     for row in csvreader:
-
+        
         totalmonths = totalmonths + 1
+        total_amount_loss = total_amount_loss + int(row["Profit/Losses"])
+        print(row)
+        
         
