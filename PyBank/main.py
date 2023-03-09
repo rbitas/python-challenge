@@ -16,10 +16,12 @@ with open(budget_path) as csvfile:
     csvheader = next(csvreader)
 
     for row in csvreader:
-
+        
         totalmonths = totalmonths + 1
         total_amount_loss = total_amount_loss + int(row[1])
-        print(totalmonths)
-        print(total_amount_loss)
+        
+print(totalmonths)
+print(total_amount_loss)
+        
         
         
