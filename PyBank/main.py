@@ -35,5 +35,6 @@ profit_average = sum(profitchanges) / len(profitchanges)
 print(profit_average) 
 
 
+
         
         
