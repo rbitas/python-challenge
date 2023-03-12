@@ -32,6 +32,9 @@ with open(election_path) as csvfile:
     for candidate in votes_for_candidate:
         print(candidate + " " + str(round(((votes_for_candidate[candidate]/total_votes)*100))) + "%" + " (" + str(votes_for_candidate[candidate]) + ")")
         
+        if total_votes > winner_votes:
+            greatest_vote[1] = votes_for_candidate
+            greatest_vote[0] = row[2] 
         
 winner = sorted(votes_for_candidate.items(),)
 print("Total Votes: " + str(total_votes))
