@@ -12,7 +12,7 @@ winner_votes = 0
 greatest_vote = ["", 0]
 list_candidates = []
 votes_for_candidate ={}
-
+# Open file 
 with open(election_path) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     csvheader = next(csvreader)
