@@ -2,6 +2,7 @@ import os
 import csv
 
 budget_path = os.path.join("/Users/rinabitas/Documents/python-challenge/PyBank/Resources/budget_data.csv")
+budget_path_txt = os.path.join("/Users/rinabitas/Documents/python-challenge/PyBank/analysis/budget_data.txt")
 
 totalmonths = 0
 total_amount_loss = 0
@@ -55,3 +56,19 @@ print("Greatest Increase: " + str(greatest_increase[0]) + " ($" + str(greatest_i
 print("Greatest Decrease: " + str(greatest_decrease[0]) + " ($" + str(greatest_decrease[1]) + ")" )
         
         
+with open(budget_path_txt, "w") as txt_file:
+   txt_file.write("Financial Analysis")
+   txt_file.write("\n")
+   txt_file.write("--------------------------------")
+   txt_file.write("\n")
+   txt_file.write("Total Months: " + str(totalmonths))
+   txt_file.write("\n")
+   txt_file.write("Total: " + "$" + str(total_amount_loss))
+   txt_file.write("\n")
+   txt_file.write("Average Change: " + "$" + str(profit_average))
+   txt_file.write("\n")
+   txt_file.write("Greatest Increase: " + str(greatest_increase[0]) + " ($" + str(greatest_increase[1]) + ")" )
+   txt_file.write("\n")
+   txt_file.write("Greatest Decrease: " + str(greatest_decrease[0]) + " ($" + str(greatest_decrease[1]) + ")" )
+
+
