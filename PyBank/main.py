@@ -38,7 +38,7 @@ with open(budget_path) as csvfile:
             greatest_decrease[0] = row[0]
             print(greatest_decrease)
                    
-#show in terminal to make sure correct
+# show in terminal to make sure correct
 print(totalmonths)
 print(total_amount_loss)
 print(profitchanges)
@@ -46,11 +46,11 @@ print(previous_amount_loss)
 print(greatest_increase)
 print(greatest_decrease)
 
-#average of the profit changes
+# average of the profit changes
 profit_average = sum(profitchanges) / len(profitchanges)
 print(profit_average) 
 
-#show in terminal
+# show in terminal
 print("Financial Analysis")
 print("--------------------------------")
 print("Total Months: " + str(totalmonths))
