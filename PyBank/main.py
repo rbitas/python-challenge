@@ -13,6 +13,7 @@ profitchanges = []
 greatest_increase = ["", 0]
 greatest_decrease = ["", 9999999]
 
+# Open file
 with open(budget_path) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     csvheader = next(csvreader)
