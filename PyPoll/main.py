@@ -1,9 +1,11 @@
 import csv
 import os 
 
+#path
 election_path = os.path.join("/Users/rinabitas/Documents/python-challenge/PyPoll/Resources/election_data.csv")
 election_path_txt = os.path.join ("/Users/rinabitas/Documents/python-challenge/PyPoll/analysis/election_data.txt")
 
+#define variables
 total_votes = 0 
 total_candidates = 0 
 winner_votes = 0
@@ -31,17 +33,18 @@ with open(election_path) as csvfile:
 
     for candidate in votes_for_candidate:
         print(candidate + " " + str(round(((votes_for_candidate[candidate]/total_votes)*100))) + "%" + " (" + str(votes_for_candidate[candidate]) + ")")
-        
+
         if total_votes > winner_votes:
             greatest_vote[1] = votes_for_candidate
             greatest_vote[0] = row[2] 
-        
+            
+#print to the terminal      
 winner = sorted(votes_for_candidate.items(),)
 print("Total Votes: " + str(total_votes))
 print("Winner: " + str(winner[1]))
 
 
-
+#output to txt file
 with open(election_path_txt, "w") as txt_file:
     txt_file.write("Election Results")
     txt_file.write("\n")
