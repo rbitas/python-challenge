@@ -23,18 +23,35 @@ with open(budget_path) as csvfile:
         if prev_profit != -1:
             profitchanges.append(profitdelta)
         prev_profit = int(row[1])
-        
+        if profitdelta > greatest_increase[1]:
+         greatest_increase[1] = profitdelta
+         greatest_increase[0] = row[0]
+         
+
+        if profitdelta < greatest_decrease[1]:
+            greatest_decrease[1] = profitdelta
+            greatest_decrease[0] = row[0]
+            print(greatest_decrease)
+                   
 
 print(totalmonths)
 print(total_amount_loss)
 print(profitchanges)
 print(previous_amount_loss)
+print(greatest_increase)
+print(greatest_decrease)
 
 
 profit_average = sum(profitchanges) / len(profitchanges)
 print(profit_average) 
 
 
-
+print("Financial Analysis")
+print("--------------------------------")
+print("Total Months: " + str(totalmonths))
+print("Total: " + "$" + str(total_amount_loss))
+print("Average Change: " + "$" + str(profit_average))
+print("Greatest Increase: " + str(greatest_increase[0]) + " ($" + str(greatest_increase[1]) + ")" )
+print("Greatest Decrease: " + str(greatest_decrease[0]) + " ($" + str(greatest_decrease[1]) + ")" )
         
         
